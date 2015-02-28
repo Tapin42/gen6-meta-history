@@ -27,7 +27,11 @@ module.exports = function (grunt) {
         },
         compositeData: {
             rawDir: '<%= globalLinkDownload.rawDir %>',
-            outFile: 'allData.json'
+            outFile: process.cwd() + '/allData.json'
+        },
+        top50: {
+            allData: '<%= compositeData.outFile %>',
+            outFile: process.cwd() + '/top50.json'
         }
     });
 

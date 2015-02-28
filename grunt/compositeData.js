@@ -20,6 +20,10 @@ module.exports = function (grunt) {
         grunt.file.recurse(rawDir, processFile);
         grunt.log.ok('Writing data to ' + outFile);
         grunt.file.write(outFile, JSON.stringify(allData, null, 2));
+
+        // You are a bad person and should feel bad for writing this, Joe.
+        grunt.ALL_DATA = allData;
+        
         grunt.log.ok('Done.');
     }
 
