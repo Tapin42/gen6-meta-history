@@ -58,7 +58,7 @@ module.exports = function (grunt) {
 
             dateAry = dateAry.filter(function (a) { 
                 if (a.rankingPokemonInfo) {
-                    return a.rankingPokemonInfo.ranking > 0 && a.rankingPokemonInfo.ranking <= 50;
+                    return a.rankingPokemonInfo.ranking > 0 && a.rankingPokemonInfo.ranking <= 200;
                 }
                 return false;
             }).sort(function (a, b) {
