@@ -2,7 +2,7 @@ module.exports = function (grunt) {
 
     grunt.initConfig({
         globalLinkDownload: {
-            rawDir: '<%= globalLink.rawDir %>',
+            rawDir: process.cwd() + '/rawData',
             request: {
                 url: 'http://3ds.pokemon-gl.com/frontendApi/gbu/getSeasonPokemonDetail',
                 headers: {
@@ -25,13 +25,14 @@ module.exports = function (grunt) {
                 }
             }
         },
-        globalLink: {
-            rawDir: process.cwd() + '/rawData'
+        compositeData: {
+            rawDir: '<%= globalLinkDownload.rawDir %>',
+            outFile: 'allData.json'
         }
     });
 
     grunt.loadTasks('grunt');
 
     grunt.registerTask('default', ['globalLinkDownload']);
-    grunt.registerTask('all', ['globalLinkDownload']);
+    grunt.registerTask('all', ['globalLinkDownload', 'compositeData']);
 };
