@@ -32,6 +32,6 @@ module.exports = function (grunt) {
 
     grunt.loadTasks('grunt');
 
-    grunt.registerTask('default', ['globalLink']);
-    grunt.registerTask('all', ['globalLinkDownload', 'globalLink']);
+    grunt.registerTask('default', ['globalLinkDownload']);
+    grunt.registerTask('all', ['globalLinkDownload']);
 };
